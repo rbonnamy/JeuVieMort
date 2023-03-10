@@ -11,7 +11,7 @@ public final class GrilleFactory {
 	 * @return {@link Grille}
 	 */
 	public static Grille getGrille(String name) {
-		Grille grille = new Grille(50, 50);
+		Grille grille = new Grille(100, 100);
 		
 		if (name.equals("Canon à planeurs")) {
 			

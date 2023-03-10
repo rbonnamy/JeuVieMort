@@ -9,7 +9,7 @@ public class Cellule {
 	/** Valeur courante de la cellule (true=vivante, false=morte) */
 	private boolean value;
 	
-	/** Valeur qu'aura la cellule à la génération suivante (true=vivante, false=morte) */
+	/** Valeur qu'aura la cellule à la génération suivante (true=vivante, false=morte) après l'invocation de la méthode avance() */
 	private boolean nextValue;
 
 	/** Getter

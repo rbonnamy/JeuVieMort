@@ -28,10 +28,11 @@ public class Grille implements Cloneable {
 
 	/** Largeur de la grille (nombre de colonnes) */
 	private int largeur;
+	
 	/** Hauteur de la grille (nombre de lignes) */
 	private int hauteur;
 
-	/** nom */
+	/** Nom de la structure */
 	private String nom;
 
 	/** Description associée à la structure */
@@ -56,16 +57,21 @@ public class Grille implements Cloneable {
 		}
 	}
 
+	/**
+	 * Méthode qui clone la grille
+	 * @return Grille
+	 */
 	public Grille clone() {
 
 		Grille clone = new Grille(largeur, hauteur);
+		clone.setNom(nom);
+		clone.setDescription(description);
 		for (int i = 0; i < hauteur; i++) {
 			lignes.add(new Ligne(largeur));
 		}
 		for (int x = 1; x <= largeur; x++) {
 			for (int y = 1; y <= hauteur; y++) {
 				clone.setCellValue(x, y, getCellValue(x, y));
-
 			}
 		}
 		return clone;
@@ -141,7 +147,7 @@ public class Grille implements Cloneable {
 	}
 
 	/**
-	 * Permet d'avancer d'une génération
+	 * Permet d'avancer à la génération suivante
 	 * 
 	 */
 	public void avance() {
@@ -172,12 +178,11 @@ public class Grille implements Cloneable {
 	}
 
 	/**
-	 * Permet de rensseigner l'état d'une cellule avec 2 valeurs de value possibles
-	 * : 0=morte, 1=vivante.
+	 * Permet de rensseigner l'état d'une cellule.  Il n'y a que 2 états possibles : false=morte, true=vivante.
 	 * 
 	 * @param x     numéro de colonne
 	 * @param y     numéro de ligne
-	 * @param value 0=morte, 1=vivante.
+	 * @param value false=morte, true=vivante.
 	 */
 	public void setCellValue(int x, int y, boolean value) {
 		if (x < 1 || x > largeur) {
@@ -191,11 +196,11 @@ public class Grille implements Cloneable {
 
 	/**
 	 * Permet de renseigner l'état qu'aura la cellule à la génération suivante.
-	 * value a 2 valeurs de value possibles : 0=morte, 1=vivante.
+	 * value a 2 états possibles : false=morte, true=vivante.
 	 * 
 	 * @param x     numéro de colonne
 	 * @param y     numéro de ligne
-	 * @param value 0=morte, 1=vivante.
+	 * @param value false=morte, true=vivante.
 	 */
 	private void setCellNextValue(int x, int y, boolean value) {
 		if (x < 1 || x > largeur) {
@@ -231,7 +236,7 @@ public class Grille implements Cloneable {
 
 	/**
 	 * Retourne l'état d'une cellule (true=vivante, false=morte) dont les
-	 * coordonnées sont passées en paramètres
+	 * coordonnées sont passées en paramètres.
 	 * 
 	 * @param x numéro de colonne
 	 * @param y numéro de ligne
@@ -243,7 +248,7 @@ public class Grille implements Cloneable {
 		if (xm == 0) {
 			xm = largeur;
 		}
-		if (xm >= largeur + 1) {
+		if (xm == largeur + 1) {
 			xm = 1;
 		}
 		if (ym == 0) {
@@ -300,36 +305,42 @@ public class Grille implements Cloneable {
 		this.lignes = lignes;
 	}
 
+	/** Getter
+	 * @return description
+	 */
 	public String getDescription() {
 		return description;
 	}
 
+	/** Setter
+	 * @param description description
+	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	/**
+	/** Getter
 	 * @return the nom
 	 */
 	public String getNom() {
 		return nom;
 	}
 
-	/**
+	/** Setter
 	 * @param nom the nom to set
 	 */
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
-	/**
+	/** Getter
 	 * @param largeur the largeur to set
 	 */
 	public void setLargeur(int largeur) {
 		this.largeur = largeur;
 	}
 
-	/**
+	/** Setter
 	 * @param hauteur the hauteur to set
 	 */
 	public void setHauteur(int hauteur) {

@@ -12,7 +12,6 @@ import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.text.html.HTMLDocument;
 
-import fr.diginamic.jeudelavie.entites.DessinGrille;
 import fr.diginamic.jeudelavie.entites.Grille;
 import fr.diginamic.jeudelavie.entites.GrilleFactory;
 

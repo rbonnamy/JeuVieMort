@@ -31,7 +31,7 @@ public class PanneauEdition extends JFrame {
 	private int nbLignes = 25;
 	private int nbColonnes = 25;
 	
-	Grille grille = new Grille(50, 50);
+	Grille grille = new Grille(70, 70);
 
 	/**
 	 * Constructeur Permet de placer les différents éléments sur le panneau

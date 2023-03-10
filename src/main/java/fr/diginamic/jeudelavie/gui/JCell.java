@@ -29,7 +29,6 @@ public class JCell extends JButton {
     protected void paintComponent(Graphics g) {
         if (value) {
             g.setColor(Color.BLACK);
-            System.out.println("black");
         } else {
         	g.setColor(Color.WHITE);
         }
