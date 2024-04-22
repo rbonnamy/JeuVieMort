@@ -20,7 +20,8 @@ import fr.diginamic.jeudelavie.entites.Grille;
  */
 public class PanneauEdition extends JFrame {
 
-	private static int BOX_SIZE = 20;
+	/** Dimensions d'une cellule (carré) en pixels */
+	private static int CELL_SIZE = 20;
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = 1454047456314804234L;
@@ -28,13 +29,19 @@ public class PanneauEdition extends JFrame {
 	/** Bouton marche/arrêt */
 	private JButton boutonValider;
 
+	/** Nombre de lignes contenues dans le panneau d'édition d'une configuration */
 	private int nbLignes = 25;
+	
+	/** Nombre de lignes contenues dans le panneau d'édition d'une configuration */
 	private int nbColonnes = 25;
 	
+	/** Grille du panneau d'édition */
 	Grille grille = new Grille(70, 70);
 
 	/**
 	 * Constructeur Permet de placer les différents éléments sur le panneau
+	 * 
+	 * @param panneauJeu panneau principal
 	 */
 	public PanneauEdition(PanneauJeu panneauJeu) {
 
@@ -62,8 +69,8 @@ public class PanneauEdition extends JFrame {
 		for (int i = 1; i <= nbLignes; i++) {
 			for (int j = 1; j <= nbColonnes; j++) {
 				JCell button = new JCell(grille, j, i);
-				button.setBounds(xOri + (j - 1) * (BOX_SIZE + xMargin) + xMargin,
-						yOri + (i - 1) * (BOX_SIZE + yMargin) + yMargin, BOX_SIZE, BOX_SIZE);
+				button.setBounds(xOri + (j - 1) * (CELL_SIZE + xMargin) + xMargin,
+						yOri + (i - 1) * (CELL_SIZE + yMargin) + yMargin, CELL_SIZE, CELL_SIZE);
 				add(button);
 			}
 		}

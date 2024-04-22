@@ -44,6 +44,9 @@ public class PanneauJeu extends JPanel {
 	/** Composant de dessin */
 	private DessinGrille dessin; 
 	
+	/**
+	 * Panneau permettant d'éditer une structure
+	 */
 	private PanneauEdition editeur = new PanneauEdition(this);
 	
 	/** Permet d'indiquer si le jeu de la vie doit avancer d'une génération ou non */
